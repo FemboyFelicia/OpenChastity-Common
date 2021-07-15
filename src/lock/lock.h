@@ -10,12 +10,15 @@ class Lock {
     public:
         Lock(std::shared_ptr<User>, std::shared_ptr<User>);
 
+        void ID(int id) { this->id = id; }
+        int ID() const { return this->id; }
         void Keyholder(std::shared_ptr<User> keyholder) { this->keyholder = keyholder; }
         std::shared_ptr<User> Keyholder() const { return this->keyholder; }
         void Lockee(std::shared_ptr<User> lockee) { this->lockee = lockee; }
         std::shared_ptr<User> Lockee() const { return this->lockee; }
 
     protected:
+        int id;
         std::shared_ptr<User> keyholder;
         std::shared_ptr<User> lockee;
 };
